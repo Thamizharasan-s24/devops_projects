@@ -1,41 +1,55 @@
+/* Set a dark, gradient background */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  overflow: hidden;
-  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #f0f0f0; /* light font color */
+  overflow-x: hidden;
 }
 
-#background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
+/* Content container styling */
 .content {
   position: relative;
   z-index: 1;
   text-align: center;
-  top: 30%;
+  padding: 40px 20px;
 }
 
-h1 {
-  font-size: 3em;
-  animation: floatText 3s ease-in-out infinite;
+/* Headings */
+h1, h2, h3 {
+  color: #a0e9fd; /* bright cyan-ish */
+  text-shadow: 0 0 10px rgba(160, 233, 253, 0.7);
 }
 
-@keyframes floatText {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+/* Paragraphs */
+p {
+  color: #d0d9e6;
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 10px auto 30px auto;
 }
 
+/* Navigation links */
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #00ffe7;
-  font-weight: bold;
+  color: #66ccff;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
+nav a:hover {
+  color: #00ffe7;
+}
+
+/* 3D background container */
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
