@@ -1,13 +1,13 @@
-# Use official Tomcat base image (version locked recommended)
+# Dockerfile
 FROM tomcat:8.5
 
-# Optional: clear default webapps if you don't want them
+# Clean default webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy your WAR file into the tomcat webapps folder as ROOT.war
+# Copy your built WAR file as ROOT.war into Tomcat webapps folder
 COPY ROOT.war /usr/local/tomcat/webapps/
 
-# Expose default Tomcat port
+# Expose Tomcat port
 EXPOSE 8080
 
 # Start Tomcat server
